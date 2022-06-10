@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"../../rtsp"
+	"github.com/yapingcat/rtsp"
 )
 
 func getNaluHdr(nalu []byte) (uint8, error) {
@@ -22,7 +22,7 @@ func getNaluHdr(nalu []byte) (uint8, error) {
 }
 
 func main() {
-    if len(os.Args) < 3 {
+	if len(os.Args) < 3 {
 		fmt.Println("usage: ", os.Args[0], " rtspurl ", "videofile")
 		return
 	}
@@ -94,5 +94,5 @@ func main() {
 		f.Write(frame.Data)
 	}
 	client.Start()
-	select{}
+	select {}
 }
