@@ -313,6 +313,7 @@ func (c *Rtspclient) handlePlay(res Response) error {
 				}
 				option := MakeOption(c.url)
 				option.HeaderFileds["CSeq"] = strconv.Itoa(c.cseq)
+				option.HeaderFileds["Session"] = c.session
 				c.cseq++
 				c.handleReponse = c.handleOption
 				c.auth.uri = c.url
